@@ -1,11 +1,31 @@
 from django.db import models
 
-# Model for food categories (e.g., Starters, Main Course, Desserts)
 class Category(models.Model):
+    CATEGORY_CHOICES = [
+        ('food', 'Food'),
+        ('drink', 'Drink'),
+    ]
+
+    DESIGN_CHOICES = [
+        ('design1', 'Design 1'),
+        ('design2', 'Design 2'),
+    ]
+
     name = models.CharField(max_length=100)
+    category_choice = models.CharField(
+        max_length=10,
+        choices=CATEGORY_CHOICES,
+        default='drink',  # Default category is 'drink'
+    )
+    design_choice = models.CharField(
+        max_length=10,
+        choices=DESIGN_CHOICES,
+        default='design1',
+    )
 
     def __str__(self):
         return self.name
+
 
 # Model for food items
 class Food(models.Model):
