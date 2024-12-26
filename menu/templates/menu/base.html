@@ -365,12 +365,28 @@
       function toggleSidebar() {
         const sidebar = document.getElementById("sidebar");
         const overlay = document.getElementById("sidebar-overlay");
-
-        sidebar.classList.toggle("-translate-x-full");
+    
+        sidebar.classList.toggle("translate-x-full");
         sidebar.classList.toggle("translate-x-0");
-
+    
         overlay.classList.toggle("hidden");
       }
+    
+      // Close the sidebar when any sidebar link is clicked
+      document.addEventListener("DOMContentLoaded", () => {
+        const sidebarLinks = document.querySelectorAll("#sidebar a");
+    
+        sidebarLinks.forEach((link) => {
+          link.addEventListener("click", () => {
+            const sidebar = document.getElementById("sidebar");
+            const overlay = document.getElementById("sidebar-overlay");
+    
+            if (!sidebar.classList.contains("translate-x-full")) {
+              toggleSidebar();
+            }
+          });
+        });
+      });
     </script>
   </body>
 </html>
