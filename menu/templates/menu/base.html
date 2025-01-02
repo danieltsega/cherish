@@ -143,67 +143,21 @@
       <!-- Sidebar Content -->
       <div class="p-6">
         <ul class="space-y-4">
-          <li>
-            <a
-              href=""
-              class="block text-gray-700 hover:text-indigo-600 text-xl poppins-medium"
-            >
-              <span class="rotate-90 inline-block mr-2 text-orange-600">|</span>
-              Special Treats</a
-            >
-          </li>
-          <li>
-            <a
-              href=""
-              class="block text-gray-700 hover:text-indigo-600 text-xl poppins-medium"
-              ><span class="rotate-90 inline-block mr-2 text-orange-600"
-                >|</span
+          {% for category in categories %}
+            <li>
+              <a
+                href="#{{ category.name|slugify }}"
+                class="block text-gray-700 hover:text-indigo-600 text-xl poppins-medium truncate"
+                style="max-width: 200px;"
               >
-              Hot Coffee</a
-            >
-          </li>
-          <li>
-            <a
-              href=""
-              class="block text-gray-700 hover:text-indigo-600 text-xl poppins-medium"
-              ><span class="rotate-90 inline-block mr-2 text-orange-600"
-                >|</span
-              >
-              Batch Brew</a
-            >
-          </li>
-          <li>
-            <a
-              href=""
-              class="block text-gray-700 hover:text-indigo-600 text-xl poppins-medium"
-              ><span class="rotate-90 inline-block mr-2 text-orange-600"
-                >|</span
-              >
-              Cold Drinks</a
-            >
-          </li>
-          <li>
-            <a
-              href=""
-              class="block text-gray-700 hover:text-indigo-600 text-xl poppins-medium"
-              ><span class="rotate-90 inline-block mr-2 text-orange-600"
-                >|</span
-              >
-              Made To Your Order</a
-            >
-          </li>
-          <li>
-            <a
-              href=""
-              class="block text-gray-700 hover:text-indigo-600 text-xl poppins-medium"
-              ><span class="rotate-90 inline-block mr-2 text-orange-600"
-                >|</span
-              >
-              Pastries</a
-            >
-          </li>
+                <span class="rotate-90 inline-block mr-2 text-orange-600">|</span>
+                {{ category.name }}
+              </a>
+            </li>
+          {% endfor %}
         </ul>
       </div>
+
 
       <!-- About Section -->
       <div class="mb-6 text-center">
