@@ -2,10 +2,11 @@ from django.contrib import admin
 from .models import Category, Food
 from django.utils.html import format_html
 from django.urls import path
+from unfold.admin import ModelAdmin
 
 # Register the Category model with enhanced admin features
 @admin.register(Category)
-class CategoryAdmin(admin.ModelAdmin):
+class CategoryAdmin(ModelAdmin):
     list_display = ('name', 'food_count')
     search_fields = ('name',)
     
@@ -17,7 +18,7 @@ class CategoryAdmin(admin.ModelAdmin):
 
 
 @admin.register(Food)
-class FoodAdmin(admin.ModelAdmin):
+class FoodAdmin(ModelAdmin):
     list_display = ('title', 'category', 'price', 'image_preview')
     list_filter = ('category',)
     search_fields = ('title', 'category__name')

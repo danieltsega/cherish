@@ -8,6 +8,7 @@
     <meta name="description" content="Welcome to Cherish Addis, a cozy cafe offering comfort, delicious hot drinks, and sweet pastries. Visit us to indulge in a relaxing atmosphere and delightful treats.">
     <meta name="keywords" content="Cherish Addis, cafe, hot drinks, pastries, cozy cafe, Addis Ababa, comfort, coffee, desserts, relaxing environment">
     <meta name="author" content="Cherish Addis Cafe">
+    <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
@@ -32,15 +33,6 @@
           <div
             class="flex-shrink-0 flex px-2 py-3 items-center space-x-8 flex-1 justify-end justify-self-end"
           >
-            <a class="hidden md:inline text-lg text-black poppins-bold" href="/"
-              >Home</a
-            >
-            <a class="hidden md:inline text-lg text-black poppins-bold" href="/"
-              >About Us</a
-            >
-            <a class="hidden md:inline text-lg text-black poppins-bold" href="/"
-              >Contact</a
-            >
             <!-- Menu Icon -->
             <div
               class="md:hidden text-gray-900 cursor-pointer"
@@ -223,6 +215,7 @@
     </div>
 
     <main class="mt-16">{% block content %}{% endblock %}</main>
+    
     <!-- Footer -->
     <footer class="font-sans tracking-wide mt-12" style="background-color: #c03725;">
       <div class="py-14 px-6 sm:px-10">
@@ -242,28 +235,6 @@
             <p class="text-gray-50 text-sm poppins-regular">
               Your Cosy corner for coffee, conversation and comfort.
             </p>
-          </div>
-
-          <div>
-            <h4 class="text-lg poppins-semibold mb-8 text-white">
-              Quick Links
-            </h4>
-            <ul class="space-y-4">
-              <li>
-                <a
-                  href="javascript:void(0)"
-                  class="text-gray-50 hover:text-white text-sm poppins-regular"
-                  >Home</a
-                >
-              </li>
-              <li>
-                <a
-                  href="javascript:void(0)"
-                  class="text-gray-50 hover:text-white text-sm poppins-regular"
-                  >About</a
-                >
-              </li>
-            </ul>
           </div>
 
           <div>
@@ -306,22 +277,22 @@
             </ul>
           </div>
 
-          <div>
+          <div id="contact">
             <h4 class="text-lg poppins-semibold mb-8 text-white">Contact Us</h4>
             <div class="space-y-4">
               <p class="text-gray-50 text-sm poppins-regular">
                 Zimbabwe Street, Addis Ababa
               </p>
               <p class="text-gray-50 text-sm poppins-regular">
-                contact@example.com
+                
               </p>
-              <p class="text-gray-50 text-sm poppins-regular">+251 927 957171</p>
+              <p class="text-gray-50 text-sm poppins-regular">+251 927 957171 </p>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="text-center py-5 bg-orange-700">
+      <div class="text-center py-5" style="background-color: #c03725;">
         <p class="text-gray-50 text-sm poppins-regular">
           © 2025 Cherish Addis Abeba. All rights reserved.
         </p>
