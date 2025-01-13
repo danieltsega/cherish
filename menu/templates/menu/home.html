@@ -17,17 +17,20 @@
                     <!-- Design 1 -->
                     {% for food in category.foods.all %}
                         <div class="group bg-white/50 shadow-md p-3 flex items-center gap-3 fade-in-out">
-                            <img
-                                src="{{ food.image.url }}"
-                                alt="{{ food.title }}"
-                                class="w-24 rounded-full img-shadow {% if category.category_choice == 'food' %}group-hover:scale-125 group-hover:rotate-[50deg] transition-all duration-700{% elif category.category_choice == 'drink' %}transition-all duration-500 group-hover:translate-y-[-30px] group-hover:scale-110 ease-out{% endif %}"
-                            />
+                             <img
+                                 src="{{ food.image.url }}"
+                                 alt="{{ food.title }}"
+                                 class="w-24 rounded-full img-shadow {% if category.category_choice == 'food' %}group-hover:scale-125 group-hover:rotate-[50deg] transition-all duration-700{% elif category.category_choice == 'drink' %}transition-all duration-500 group-hover:translate-y-[-30px] group-hover:scale-110 ease-out{% endif %}"
+                             />
                             <div>
                                 <h3 class="text-xl poppins-semibold">{{ food.title }}</h3>
-                                <p class="text-xl text-yellow-500 poppins-medium">{{ food.price }} ETB</p>
+                                <p class="text-xl text-yellow-500 poppins-medium">
+                                    {{ food.price }} ETB
+                                </p>
                             </div>
                         </div>
-                    {% endfor %}
+            {% endfor %}
+
                 {% else %}
                     <!-- Design 2 -->
                     {% for food in category.foods.all %}
@@ -39,7 +42,13 @@
                             />
                             <div>
                                 <p class="text-xl poppins-semibold">{{ food.title }}</p>
-                                <p class="text-xl poppins-medium text-yellow-500">{{ food.price }} ETB</p>
+                                <p class="text-xl poppins-medium text-yellow-500">
+                                {% if food.title.strip == "Espresso Single/Espresso Double" %}
+                                     {{ food.price }} ETB / 160.00 ETB
+                                {% else %}
+                                    {{ food.price }} ETB
+                                {% endif %}
+                                </p>
                             </div>
                         </div>
                     {% endfor %}
